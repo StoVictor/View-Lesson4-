@@ -6,9 +6,13 @@
 </head>
 <body>
    <?php  ?>
-    <?php foreach($this->items as $item):?>
-    <h1><?php echo $item['title'] ?></h1>
-    <p> <?php echo $item['text'] ?></p>
+    <?php foreach($this as $key=>$item):?>
+    <?php if($key == 'items'):  ?>
+    <?php foreach($item as $article):  ?>
+    <h1><?php echo $article['title'] ?></h1>
+    <p> <?php echo $article['text'] ?></p>
+    <?php endforeach;?>
+    <?php endif;?>
     <?php endforeach;?><br>
     <a href="views/add.php">Добавить новость</a> 
 </body>
